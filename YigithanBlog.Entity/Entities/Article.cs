@@ -17,8 +17,8 @@ namespace YigithanBlog.Entity.Entities
         public Category Category { get; set; }
         public Guid ImageId { get; set; }
         public Image Image { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsDeleted { get; set; }
+        public Guid UserId { get; set; }
+        public AppUser User { get; set; }
     }
        
 }

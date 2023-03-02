@@ -59,7 +59,8 @@ namespace YigithanBlog.Data.Mappings
                 LastName = "Keskin",
                 PhoneNumberConfirmed = true,
                 EmailConfirmed = true,
-                SecurityStamp = Guid.NewGuid().ToString()
+                SecurityStamp = Guid.NewGuid().ToString(),
+                ImageId= Guid.Parse("D033F821-F516-4651-929A-F11F85DB6188")
             };
             superadmin.PasswordHash = CreatePasswordHash(superadmin, "123456");
             var admin = new AppUser
@@ -74,7 +75,8 @@ namespace YigithanBlog.Data.Mappings
                 LastName = "User",
                 PhoneNumberConfirmed = false,
                 EmailConfirmed = false,
-                SecurityStamp = Guid.NewGuid().ToString()
+                SecurityStamp = Guid.NewGuid().ToString(),
+                ImageId = Guid.Parse("D033F821-F516-4651-929A-F11F85DB6188")
             };
             admin.PasswordHash = CreatePasswordHash(admin, "123456");
 
