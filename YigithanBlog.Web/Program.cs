@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using YigithanBlog.Data.Context;
 using YigithanBlog.Data.Extensions;
+using YigithanBlog.Entity.Entities;
 using YigithanBlog.Service.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);

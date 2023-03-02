@@ -17,6 +17,17 @@ namespace YigithanBlog.Data.Mappings
 
             // Maps to the AspNetUserRoles table
             builder.ToTable("AspNetUserRoles");
+
+            builder.HasData(new AppUserRole
+            {
+                UserId= Guid.Parse("FF63279D-1D1D-4EE4-B38F-7F450B789AA4"),
+                RoleId = Guid.Parse("86D36FF9-7BF6-4150-AF28-EBC0D6CA09F6")
+            },
+            new AppUserRole
+            {
+                UserId= Guid.Parse("C70EEA03-49A4-4328-9AF3-CC199300B4BE"),
+                RoleId= Guid.Parse("50FEF4DA-C876-4A50-BD56-B544A792695D")
+            });
         }
     }
 }

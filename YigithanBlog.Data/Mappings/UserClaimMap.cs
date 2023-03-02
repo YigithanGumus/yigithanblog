@@ -9,9 +9,9 @@ using YigithanBlog.Entity.Entities;
 
 namespace YigithanBlog.Data.Mappings
 {
-    public class UserClaimMap : IEntityTypeConfiguration<AppRole>
+    public class UserClaimMap : IEntityTypeConfiguration<AppUserClaim>
     {
-        public void Configure(EntityTypeBuilder<AppRole> builder)
+        public void Configure(EntityTypeBuilder<AppUserClaim> builder)
         {
             builder.HasKey(uc => uc.Id);
 
