@@ -53,21 +53,21 @@ namespace YigithanBlog.Data.Migrations
                         new
                         {
                             Id = new Guid("86d36ff9-7bf6-4150-af28-ebc0d6ca09f6"),
-                            ConcurrencyStamp = "43ebd278-d1bd-44f8-ae31-f10c5ed2ba17",
+                            ConcurrencyStamp = "ad356213-ee76-4b50-b28e-b7b7ff387b63",
                             Name = "Superadmin",
                             NormalizedName = "SUPERADMIN"
                         },
                         new
                         {
                             Id = new Guid("50fef4da-c876-4a50-bd56-b544a792695d"),
-                            ConcurrencyStamp = "16aaf785-6c8f-441b-a407-36a80e139ae6",
+                            ConcurrencyStamp = "ccb9c1c6-975d-4b37-a436-eb66b46f4fa1",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = new Guid("b54d7140-e9fd-43b2-9117-c125b4b2a756"),
-                            ConcurrencyStamp = "d47fc673-b84b-4992-85b3-8858c29a2434",
+                            ConcurrencyStamp = "f55df484-657e-4420-a657-32ca27d00940",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -121,9 +121,6 @@ namespace YigithanBlog.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("ImageId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -163,8 +160,6 @@ namespace YigithanBlog.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ImageId");
-
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -180,19 +175,18 @@ namespace YigithanBlog.Data.Migrations
                         {
                             Id = new Guid("ff63279d-1d1d-4ee4-b38f-7f450b789aa4"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "875536fe-8942-4d01-b9f1-274bf0c445ec",
+                            ConcurrencyStamp = "c901190e-835f-4487-b754-531cc98144db",
                             Email = "superadmin@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Cem",
-                            ImageId = new Guid("d033f821-f516-4651-929a-f11f85db6188"),
                             LastName = "Keskin",
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPERADMIN@GMAIL.COM",
                             NormalizedUserName = "SUPERADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIDKn2eFjN+Q16wQdGWtrVWSQh5GZNgnDqyYUVcskVK8086iJMPE7XdszQ2P52aDpQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFD0MUMAs/vzS8LY0etdjZ283Y2lFpHNuGIkXIGZVWlhWusEj/vhh/yEJtfg9noiaQ==",
                             PhoneNumber = "+905439999999",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "66201239-24ce-4bc9-96e0-eed397e41aa4",
+                            SecurityStamp = "09038221-6e43-4e29-a94a-41795afe567d",
                             TwoFactorEnabled = false,
                             UserName = "superadmin@gmail.com"
                         },
@@ -200,19 +194,18 @@ namespace YigithanBlog.Data.Migrations
                         {
                             Id = new Guid("c70eea03-49a4-4328-9af3-cc199300b4be"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "cda3ace1-b311-4828-a7e6-cf4d85b8cfec",
+                            ConcurrencyStamp = "aaad6d8c-5340-4ba1-abc3-efa017126dad",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
-                            ImageId = new Guid("0c3559b7-e1df-4fd0-a475-6712b386d91b"),
                             LastName = "User",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFOjGTok5aeHoIo3NGlwXz4mYeBizxdPKWCmwgKBQ2hF4wMIr0UWNhbs2rS0ZzAEcQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEF9LpiG2Xkww6hHkiSwEsQJq5qbdQBgzzQ1A/h3n0kVOQB1xHJcVCp8yNFB+X/L/jg==",
                             PhoneNumber = "+905439999988",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6477f1d6-54a1-4de7-9a1f-b8d14c31cb0e",
+                            SecurityStamp = "8cca3867-0d69-4a59-922f-fb42aee9d03c",
                             TwoFactorEnabled = false,
                             UserName = "admin@gmail.com"
                         });
@@ -337,7 +330,7 @@ namespace YigithanBlog.Data.Migrations
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("ImageId")
+                    b.Property<Guid>("ImageId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
@@ -353,9 +346,6 @@ namespace YigithanBlog.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("ViewCount")
                         .HasColumnType("int");
 
@@ -365,35 +355,31 @@ namespace YigithanBlog.Data.Migrations
 
                     b.HasIndex("ImageId");
 
-                    b.HasIndex("UserId");
-
                     b.ToTable("Articles");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("141b666e-be41-40b6-9aa6-4f5c3d739a9f"),
+                            Id = new Guid("9b5370e4-6f15-4edc-bbc7-fc9169758d17"),
                             CategoryId = new Guid("6225c7a6-dd70-4cc4-aec4-c7b7612cde27"),
                             Content = "Asp.net Core Deneme Makalesi  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 3, 3, 10, 16, 49, 601, DateTimeKind.Local).AddTicks(5518),
+                            CreatedDate = new DateTime(2023, 3, 2, 13, 32, 55, 222, DateTimeKind.Local).AddTicks(4368),
                             ImageId = new Guid("d033f821-f516-4651-929a-f11f85db6188"),
                             IsDeleted = false,
                             Title = "Asp.net Core Deneme Makalesi 1",
-                            UserId = new Guid("ff63279d-1d1d-4ee4-b38f-7f450b789aa4"),
                             ViewCount = 15
                         },
                         new
                         {
-                            Id = new Guid("ba16c94f-387a-474c-b8f7-633bcbc84b0b"),
+                            Id = new Guid("c05ab8c4-c29e-4799-a40c-4297e600c83d"),
                             CategoryId = new Guid("bd4af5a5-7950-453d-96dd-efdd253d9e22"),
                             Content = "Asp.net Core Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 3, 3, 10, 16, 49, 601, DateTimeKind.Local).AddTicks(5525),
+                            CreatedDate = new DateTime(2023, 3, 2, 13, 32, 55, 222, DateTimeKind.Local).AddTicks(4375),
                             ImageId = new Guid("0c3559b7-e1df-4fd0-a475-6712b386d91b"),
                             IsDeleted = false,
                             Title = "Asp.net Core Deneme Makalesi 1",
-                            UserId = new Guid("c70eea03-49a4-4328-9af3-cc199300b4be"),
                             ViewCount = 15
                         });
                 });
@@ -439,7 +425,7 @@ namespace YigithanBlog.Data.Migrations
                         {
                             Id = new Guid("6225c7a6-dd70-4cc4-aec4-c7b7612cde27"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 3, 3, 10, 16, 49, 601, DateTimeKind.Local).AddTicks(5843),
+                            CreatedDate = new DateTime(2023, 3, 2, 13, 32, 55, 222, DateTimeKind.Local).AddTicks(4654),
                             IsDeleted = false,
                             Name = "ASP.NET Core"
                         },
@@ -447,7 +433,7 @@ namespace YigithanBlog.Data.Migrations
                         {
                             Id = new Guid("bd4af5a5-7950-453d-96dd-efdd253d9e22"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 3, 3, 10, 16, 49, 601, DateTimeKind.Local).AddTicks(5846),
+                            CreatedDate = new DateTime(2023, 3, 2, 13, 32, 55, 222, DateTimeKind.Local).AddTicks(4658),
                             IsDeleted = false,
                             Name = "Visual Studio 2022"
                         });
@@ -498,7 +484,7 @@ namespace YigithanBlog.Data.Migrations
                         {
                             Id = new Guid("d033f821-f516-4651-929a-f11f85db6188"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 3, 3, 10, 16, 49, 601, DateTimeKind.Local).AddTicks(6039),
+                            CreatedDate = new DateTime(2023, 3, 2, 13, 32, 55, 222, DateTimeKind.Local).AddTicks(4833),
                             FileName = "images/testimage",
                             FileType = "jpg",
                             IsDeleted = false
@@ -507,7 +493,7 @@ namespace YigithanBlog.Data.Migrations
                         {
                             Id = new Guid("0c3559b7-e1df-4fd0-a475-6712b386d91b"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 3, 3, 10, 16, 49, 601, DateTimeKind.Local).AddTicks(6042),
+                            CreatedDate = new DateTime(2023, 3, 2, 13, 32, 55, 222, DateTimeKind.Local).AddTicks(4837),
                             FileName = "images/vstest",
                             FileType = "png",
                             IsDeleted = false
@@ -521,17 +507,6 @@ namespace YigithanBlog.Data.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("YigithanBlog.Entity.Entities.AppUser", b =>
-                {
-                    b.HasOne("YigithanBlog.Entity.Entities.Image", "Image")
-                        .WithMany("Users")
-                        .HasForeignKey("ImageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Image");
                 });
 
             modelBuilder.Entity("YigithanBlog.Entity.Entities.AppUserClaim", b =>
@@ -586,24 +561,13 @@ namespace YigithanBlog.Data.Migrations
 
                     b.HasOne("YigithanBlog.Entity.Entities.Image", "Image")
                         .WithMany("Articles")
-                        .HasForeignKey("ImageId");
-
-                    b.HasOne("YigithanBlog.Entity.Entities.AppUser", "User")
-                        .WithMany("Articles")
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("ImageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Category");
 
                     b.Navigation("Image");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("YigithanBlog.Entity.Entities.AppUser", b =>
-                {
-                    b.Navigation("Articles");
                 });
 
             modelBuilder.Entity("YigithanBlog.Entity.Entities.Category", b =>
@@ -614,8 +578,6 @@ namespace YigithanBlog.Data.Migrations
             modelBuilder.Entity("YigithanBlog.Entity.Entities.Image", b =>
                 {
                     b.Navigation("Articles");
-
-                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }
