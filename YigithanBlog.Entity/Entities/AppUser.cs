@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YigithanBlog.Core.Entities;
 
 namespace YigithanBlog.Entity.Entities
 {
