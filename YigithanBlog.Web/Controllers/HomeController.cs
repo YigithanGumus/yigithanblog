@@ -18,8 +18,9 @@ namespace YigithanBlog.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var articles = await articleService.GetAllArticlesAsync();
-            return View(articles);
+             var articles = await articleService.GetAllArticlesAsync();
+             return View(articles);
+           
         }
 
         public IActionResult Privacy()
