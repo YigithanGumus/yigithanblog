@@ -76,7 +76,7 @@ namespace YigithanBlog.Data.Mappings
                 PhoneNumberConfirmed = false,
                 EmailConfirmed = false,
                 SecurityStamp = Guid.NewGuid().ToString(),
-                ImageId = Guid.Parse("D033F821-F516-4651-929A-F11F85DB6188")
+                ImageId = Guid.Parse("0C3559B7-E1DF-4FD0-A475-6712B386D91B")
             };
             admin.PasswordHash = CreatePasswordHash(admin, "123456");
 
